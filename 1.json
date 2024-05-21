@@ -1,23 +1,29 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : null,
+    "description" : "Binance API for fetching ticker prices",
     "version" : "1.0.0",
-    "title" : null,
-    "termsOfService" : null,
-    "contact" : null,
-    "license" : null
+    "title" : "Binance Ticker Price API",
+    "termsOfService" : "https://www.binance.com/terms",
+    "contact" : {
+      "name" : "Binance Support",
+      "url" : "https://www.binance.com/support"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
   },
-  "host" : "api.binance.comapi.binance.com",
+  "host" : "api.binance.com",
   "basePath" : "/",
   "schemes" : [ "https" ],
   "paths" : {
     "/api/v3/ticker/price" : {
       "get" : {
-        "tags" : [ "1" ],
-        "summary" : null,
-        "description" : null,
-        "operationId" : "1",
+        "tags" : [ "ticker" ],
+        "summary" : "Get ticker prices",
+        "description" : "Fetch the latest ticker prices for all symbols.",
+        "operationId" : "getTickerPrice",
         "produces" : [ "application/json" ],
         "consumes" : [ "application/json" ],
         "parameters" : [ ],
@@ -27,7 +33,7 @@
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/1"
+                "$ref" : "#/definitions/TickerPrice"
               }
             }
           }
@@ -36,13 +42,16 @@
     }
   },
   "definitions" : {
-    "1" : {
+    "TickerPrice" : {
+      "type" : "object",
       "properties" : {
         "symbol" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "The trading pair symbol"
         },
         "price" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "The latest price for the trading pair"
         }
       }
     }
