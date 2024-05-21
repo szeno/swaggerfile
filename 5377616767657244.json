@@ -1,52 +1,64 @@
-{ 
-  "swagger" : "2.0" 
-  "info" : { 
-    "description" : null, 
-    "version" : "1.0.0", 
-    "title" : null, 
-    "termsOfService" : null, 
-    "contact" : null, 
-    "license" : null 
-  }, 
-  "host" : "api.open-notify.org", 
-  "basePath" : "/", 
-  "schemes" : [ "http" ], 
-  "paths" : { 
-    "/astros.json" : { 
-      "get" : { 
-        "tags" : [ "5377616767657244" ], 
-        "summary" : null, 
-        "description" : null, 
-        "operationId" : "5377616767657244", 
-        "produces" : [ "application/json" ], 
-        "consumes" : [ "application/json" ], 
-        "parameters" : [ ], 
-        "responses" : { 
-          "200" : { 
-            "description" : "successful operation", 
-            "schema" : { 
-              "$ref" : "#/definitions/5377616767657244"            
-  }          }        }      }    }  }, 
-  "definitions" : { 
-    "5377616767657244##people" : { 
-      "properties" : { 
-        "craft" : { 
-          "type" : "string" 
-        }, 
-        "name" : { 
-          "type" : "string" 
-        }      }    }, 
-    "5377616767657244" : { 
-      "properties" : { 
-        "number" : { 
-          "type" : "number", 
-          "format" : "int32" 
-        }, 
-        "message" : { 
-          "type" : "string" 
-        }, 
-        "people" : { 
-          "type" : "array", 
-          "items" : { 
-            "$ref" : "#/definitions/5377616767657244##people" 
-          }        }      }    }  }}
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "api.open-notify.org",
+  "basePath" : "/api.open-notify.org",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/astros.json" : {
+      "get" : {
+        "tags" : [ "5377616767657244" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "5377616767657244",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/5377616767657244"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "5377616767657244##people" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "craft" : {
+          "type" : "string"
+        }
+      }
+    },
+    "5377616767657244" : {
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "people" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/5377616767657244##people"
+          }
+        },
+        "number" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    }
+  }
+}
