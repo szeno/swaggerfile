@@ -27,10 +27,22 @@
             "schema" : {
               "type" : "array",
               "items" : {
-                "type" : "string"
+                "$ref" : "#/definitions/1"
               }
             }
           }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "1" : {
+      "properties" : {
+        "symbol" : {
+          "type" : "string"
+        },
+        "price" : {
+          "type" : "string"
         }
       }
     }
