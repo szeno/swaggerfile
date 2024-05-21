@@ -1,0 +1,50 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "api.binance.comapi.binance.com",
+  "basePath" : "/",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/api/v3/ticker/price" : {
+      "get" : {
+        "tags" : [ "1" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "1",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/1"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "1" : {
+      "properties" : {
+        "symbol" : {
+          "type" : "string"
+        },
+        "price" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
